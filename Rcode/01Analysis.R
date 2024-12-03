@@ -3,7 +3,7 @@ library(tidyverse)
 library(survey)
 library(gtsummary)
 library(flextable)
-
+library(forestplot)
 
 #----- Read data
 #===============================================================================
@@ -66,6 +66,7 @@ dhs_design <- svydesign(
 
 
 #----- Table 1: participant characteristics
+#===============================================================================
 outlist <- c("neonatal", "infant", "under5")
 
 varlist <- c(
@@ -120,6 +121,7 @@ table1_overall |>
 
 
 #----- Table 2: % of outcomes across characteristics
+#===============================================================================
 results_list <- list()
 
 # Loop through each outcome variable
@@ -164,66 +166,143 @@ write.csv(results_df, "Results/percentages_by_varlist.csv", row.names = TRUE, na
 
 
 #----- Table 3: Logistic
-logi_neo <- svyglm(neonatal ~ ch_sex + birthorder + delivery + 
-                     mom_age_cat + marital + mom_educ + early_preg + 
-                     wealth + water + sanit + placeofres + 
-                     inst_skilled + anc4, design = dhs_design, family = quasibinomial)
+#===============================================================================
+#--- Neonatal
+logi_neo_unadj <- svyglm(neonatal ~ wealth + placeofres + inst_skilled + anc4,
+                         design = dhs_design, family = quasibinomial)
 
-logi_inf <- svyglm(infant ~ ch_sex + birthorder + delivery + 
-                     mom_age_cat + marital + mom_educ + early_preg + 
-                     wealth + water + sanit + placeofres + 
-                     inst_skilled + anc4, design = dhs_design, family = quasibinomial)
-
-logi_u5 <- svyglm(under5 ~ ch_sex + birthorder + delivery + 
-                     mom_age_cat + marital + mom_educ + early_preg + 
-                     wealth + water + sanit + placeofres + 
-                     inst_skilled + anc4, design = dhs_design, family = quasibinomial)
+logi_neo_adj <- svyglm(neonatal ~  wealth + placeofres +  inst_skilled + anc4 + 
+                         birthorder + interval + delivery + ch_sex +
+                         mom_age_cat + marital + mom_educ + early_preg + 
+                         water + sanit + country_name, design = dhs_design, family = quasibinomial)
 
 
-summary(logi_neo)
-summary(logi_inf)
-summary(logi_u5)
-
-coef_tab1 <- summary(logi_neo)$coefficients |>
-  as.tibble(rownames = "Parameter")|>
-  filter(Parameter != "(Intercept)")
-
-coef_tab2 <- summary(logi_inf)$coefficients|>
-  as.tibble(rownames = "Parameter")|>
-  filter(Parameter != "(Intercept)")
-
-coef_tab3 <- summary(logi_u5)$coefficients|>
-  as.tibble(rownames = "Parameter")|>
-  filter(Parameter != "(Intercept)")
-
-coef_tab_all <- rbind(coef_tab1, coef_tab2, coef_tab3) 
-
-coef_tab_all$model <- rep(c("NM", "IM", "U5M"), each = nrow(coef_tab1))
-
-# Calculate OR and 95%CI
-coef_tab_all <- coef_tab_all |>
-  mutate(
-    OR = exp(Estimate),
-    lb = exp(Estimate - 1.96*`Std. Error`),
-    ub = exp(Estimate + 1.96*`Std. Error`)
-  )
+summary(logi_neo_unadj)
+summary(logi_neo_adj)
 
 
-# Forest plot
-dodge <- position_dodge(width = 0.5)
+#--- Infant
+logi_inf_unadj <- svyglm(infant ~ wealth + placeofres + inst_skilled + anc4,
+                         design = dhs_design, family = quasibinomial)
 
-coef_tab_all |>
-  ggplot(aes(x = Parameter, y = OR, ymin = lb, ymax = ub, color = model)) + 
-  geom_errorbar(width = 0.5, size = 1, position = dodge) +
-  geom_point(size = 2, shape = 21, fill="white", position = dodge) +
-  geom_hline(yintercept = 1, linetype = 2, col = "red", size = 1) +
-  scale_color_brewer(palette = "Set1") +
-  coord_flip() +
-  theme_bw() + 
-  theme(legend.position = "top") +
-  labs(
-    x = NULL,
-    y = "OR (95% CI)",
-    color = "Model"
-  )
+logi_inf_adj <- svyglm(infant ~  wealth + placeofres +  inst_skilled + anc4 + 
+                         birthorder + interval + delivery + ch_sex +
+                         mom_age_cat + marital + mom_educ + early_preg + 
+                         water + sanit + country_name, design = dhs_design, family = quasibinomial)
+
+
+summary(logi_inf_unadj)
+summary(logi_inf_adj)
+
+
+
+#--- U5MR
+logi_u5_unadj <- svyglm(under5 ~ wealth + placeofres + inst_skilled + anc4,
+                         design = dhs_design, family = quasibinomial)
+
+logi_u5_adj <- svyglm(under5 ~  wealth + placeofres +  inst_skilled + anc4 + 
+                         birthorder + interval + delivery + ch_sex +
+                         mom_age_cat + marital + mom_educ + early_preg + 
+                         water + sanit + country_name, design = dhs_design, family = quasibinomial)
+
+
+summary(logi_u5_unadj)
+summary(logi_u5_adj)
+
+
+
+#----- Function to extract results
+myresultExtract <- function(modelA, modelB, name) {
+  modelA <- summary(modelA)$coefficients |>
+    as.tibble(rownames = "Parameter") |>
+    filter(Parameter != "(Intercept)") |>
+    mutate(model = "Reduced")
+  
+  modelB <- summary(modelB)$coefficients |>
+    as.tibble(rownames = "Parameter") |>
+    filter(Parameter != "(Intercept)") |>
+    mutate(model = "Fully adjusted")
+  
+  coef_all <- rbind(modelA, modelB) |>
+    mutate(
+      OR = round(exp(Estimate), 2),
+      lb = round(exp(Estimate - 1.96*`Std. Error`), 2),
+      ub = round(exp(Estimate + 1.96*`Std. Error`), 2),
+      display = paste0(OR, " (", lb, "-", ub, ")")
+    )
+  # Save to excel
+  path <- paste0("Results/coef_all_", name, ".csv")
+  write.csv(coef_all, path, row.names = FALSE, na = "")
+}
+
+
+myresultExtract(modelA = logi_neo_unadj, modelB = logi_neo_adj, name = "neo")
+myresultExtract(modelA = logi_inf_unadj, modelB = logi_inf_adj, name = "inf")
+myresultExtract(modelA = logi_u5_unadj, modelB = logi_u5_adj, name = "u5")
+
+
+#----- Function to create forest plot
+myforestPlot <- function(data) {
+  coef_unadj <- data |> filter(model == "Reduced")
+  coef_adj <- data |> filter(model == "Fully adjusted")
+  
+  tabletext <- cbind(c("",coef_unadj$Parameter), 
+                     c("Reduced",coef_unadj$display),
+                     c("Fully adjusted",coef_adj$display))
+  
+  forestplot(labeltext=tabletext, 
+             graph.pos=2, 
+             clip=c(0.6, 1.5), 
+             xticks = c(0.6, 0.8, 1, 1.2, 1.5), 
+             xlog=T, 
+             mean=cbind(c(NA, coef_unadj$OR),c(NA, coef_adj$OR)), 
+             lower=cbind(c(NA, coef_unadj$lb),c(NA, coef_adj$lb)), 
+             upper=cbind(c(NA, coef_unadj$ub),c(NA, coef_adj$ub)), 
+             is.summary=c(T, 
+                          T,rep(FALSE,1),
+                          T,rep(FALSE,1),
+                          T,rep(FALSE,1),
+                          T,rep(FALSE,4)),
+             fn.ci_norm = c(fpDrawNormalCI, fpDrawCircleCI), 
+             txt_gp=fpTxtGp(label=gpar(cex = 1), 
+                            summary = list(gpar(cex=1,fontface=2), gpar(cex=1,fontface=1), gpar(cex=1,fontface=1)), 
+                            ticks=gpar(cex = 1),
+                            xlab=gpar(cex = 1), 
+                            title=gpar(cex = 1)), 
+             col=fpColors(box=c("#225ea8", "#d7301f"), lines=c("#225ea8", "#d7301f"), zero = "gray50"),
+             lty.ci = c(2,1), 
+             zero=1, 
+             cex=1, 
+             lineheight = "auto", 
+             line.margin = 0.15,
+             colgap=unit(5,"mm"),
+             legend = c("Reduced", "Fully adjusted"),
+             legend_args = fpLegend(title = NULL,
+                                    pos = "top"),
+             boxsize=0.3, 
+             lwd.ci=1.5, 
+             ci.vertices=TRUE,
+             ci.vertices.height = 0.1, 
+             xlab = "OR (95% CI)")
+  
+}
+
+
+coef_neo_all <- read_csv("Results/coef_all_neo1.csv")
+coef_inf_all <- read_csv("Results/coef_all_inf1.csv")
+coef_u5_all <- read_csv("Results/coef_all_u51.csv")
+
+
+png("Results/Figure3a_neo.png", units="in", width = 12, height = 6, res = 300)
+myforestPlot(data = coef_neo_all)
+dev.off() 
+
+
+png("Results/Figure3b_inf.png", units="in", width = 12, height = 6, res = 300)
+myforestPlot(data = coef_inf_all)
+dev.off() 
+
+png("Results/Figure3c_u5.png", units="in", width = 12, height = 6, res = 300)
+myforestPlot(data = coef_u5_all)
+dev.off() 
 

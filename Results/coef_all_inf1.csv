@@ -1,0 +1,23 @@
+Parameter,model,OR,lb,ub,display
+Antenatal care visits (ref: <4),Reduced,,,,
+    4+,Reduced,0.78,0.73,0.83,0.78 (0.73-0.83)
+Institutional & skilled attendant (ref: No),Reduced,,,,
+    Yes,Reduced,0.94,0.88,1.01,0.94 (0.88-1.01)
+Place of residence (ref: Urban),Reduced,,,,
+    Rural,Reduced,0.98,0.9,1.07,0.98 (0.90-1.07)
+Wealth index (ref: Poorest),Reduced,,,,
+    Poorer,Reduced,1.05,0.97,1.15,1.05 (0.97-1.15)
+    Middle,Reduced,0.96,0.87,1.05,0.96 (0.87-1.05)
+    Richer,Reduced,0.91,0.82,1.01,0.91 (0.82-1.01)
+    Richest,Reduced,0.76,0.67,0.87,0.76 (0.67-0.87)
+Antenatal care visits (ref: <4),Fully adjusted,,,,
+    4+,Fully adjusted,0.79,0.74,0.85,0.79 (0.74-0.85)
+Institutional & skilled attendant (ref: No),Fully adjusted,,,,
+    Yes,Fully adjusted,0.93,0.85,1.02,0.93 (0.85-1.02)
+Place of residence (ref: Urban),Fully adjusted,,,,
+    Rural,Fully adjusted,1.01,0.92,1.11,1.01 (0.92-1.11)
+Wealth index (ref: Poorest),Fully adjusted,,,,
+    Poorer,Fully adjusted,1.07,0.98,1.18,1.07 (0.98-1.18)
+    Middle,Fully adjusted,1,0.9,1.11,1.00 (0.90-1.11)
+    Richer,Fully adjusted,1.01,0.9,1.14,1.01 (0.90-1.14)
+    Richest,Fully adjusted,0.89,0.76,1.03,0.89 (0.76-1.03)
