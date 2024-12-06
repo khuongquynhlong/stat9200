@@ -72,7 +72,7 @@ outlist <- c("neonatal", "infant", "under5")
 varlist <- c(
   "ch_sex", "birthorder", "interval",
   "delivery", "mom_age_cat", "marital", "mom_educ", "early_preg", "tetanus",
-  "everbf", "wealth", "water", "sanit", "placeofres", "inst_skilled", "anc4"
+  "everbf", "wealth", "water", "sanit", "placeofres", "inst_skilled", "anc4", "anc_cat3"
 )
 
 varlab <- list(
@@ -110,14 +110,37 @@ table1_overall <- tbl_svysummary(
 )
 
 
-table1_overall
-
 # Save to doc
 table1_overall |>
   as_flex_table() |>
   save_as_docx(path = "Results/Table1_overall.docx")
 
 
+# New way
+results_tab1 <- list()
+
+for (var in c(outlist, varlist)) {
+  table <- svymean(
+    as.formula(paste("~", var)), 
+    dhs_design, 
+    na.rm = TRUE
+  )
+  
+  table_df <- as.data.frame(table) |>
+    mutate(
+      variable = var,                          
+      level = rownames(as.data.frame(table))  
+    )
+  
+  # Store the result 
+  results_tab1[[var]] <- table_df
+}
+
+results_df <- bind_rows(results_tab1) |>
+  select(variable, level, everything()) |>
+  mutate(mean = round(mean*100, 1))
+
+write.csv(results_df, "Results/Table1_overall.csv")
 
 
 #----- Table 2: % of outcomes across characteristics
@@ -127,7 +150,6 @@ results_list <- list()
 # Loop through each outcome variable
 for (outcome in outlist) {
   for (var in varlist) {
-    # Create a weighted table of proportions
     table <- svyby(
       as.formula(paste("~", outcome)), 
       as.formula(paste("~", var)), 
@@ -137,7 +159,6 @@ for (outcome in outlist) {
       vartype = "ci" 
     )
     
-    # Add identifiers for the variable and outcome
     table <- table |>
       mutate(
         group_var = var,
@@ -154,7 +175,7 @@ results_df <- bind_rows(results_list)
 
 # Clean a bit
 results_df <- results_df |>
-  mutate(across(where(is.numeric), ~ round(., 5))) |>
+  mutate(across(where(is.numeric), ~ round(.*100, 2))) |>
   select(group_var, outcome, neonatalYes, ci_l.neonatalYes, ci_u.neonatalYes,
          infantYes, ci_l.infantYes, ci_u.infantYes, 
          under5Yes, ci_l.under5Yes, ci_u.under5Yes)
@@ -165,7 +186,10 @@ write.csv(results_df, "Results/percentages_by_varlist.csv", row.names = TRUE, na
 
 
 
-#----- Table 3: Logistic
+
+
+
+#----- Table 3: Logistic --> Figure 3 forest plots
 #===============================================================================
 #--- Neonatal
 logi_neo_unadj <- svyglm(neonatal ~ wealth + placeofres + inst_skilled + anc4,
@@ -305,4 +329,153 @@ dev.off()
 png("Results/Figure3c_u5.png", units="in", width = 12, height = 6, res = 300)
 myforestPlot(data = coef_u5_all)
 dev.off() 
+
+
+
+
+
+
+
+#----- Figure 2: Equity plots
+#===============================================================================
+health_ind <- c("inst_skilled", "anc4")
+disp_ft <- c("mom_age_cat", "mom_educ", "wealth", "placeofres")
+
+results_hi <- list()
+
+# Loop through each outcome variable
+for (outcome in health_ind) {
+  for (var in disp_ft) {
+    table <- svyby(
+      as.formula(paste("~", outcome)), 
+      as.formula(paste("~", var, "+ country_name")), 
+      dhs_design, 
+      svymean, 
+      na.rm = TRUE,
+      vartype = "ci" 
+    )
+    
+    # Add identifiers for the variable and outcome
+    table <- table |>
+      mutate(
+        group_var = var,
+        outcome = outcome
+      )
+    
+    # Store the results
+    results_hi[[paste(outcome, var, sep = "_")]] <- table
+  }
+}
+
+# Combine all results
+results_df_hi <- bind_rows(results_hi)
+
+# Clean a bit
+results_df_hi <- results_df_hi |>
+  mutate(across(where(is.numeric), ~ round(.*100, 1))) |>
+  select(group_var, outcome, inst_skilledYes, anc4Yes)
+
+
+df_hi <- cbind(results_df_hi |> filter(outcome == "inst_skilled") |> select(-c(anc4Yes, outcome)),
+               anc4 = results_df_hi |> filter(outcome == "anc4") |> pull(anc4Yes))
+
+# Mother age
+#------------------------------------------------------------------------------
+df_hi_anc4_age <- df_hi |> filter(group_var == "mom_age_cat") 
+
+df_hi_anc4_age <- df_hi_anc4_age|>
+  mutate(country = substring(row.names(df_hi_anc4_age), 7),
+         group = substr(row.names(df_hi_anc4_age), 1, 5)) |>
+  select(-group_var)
+
+
+# Wealth
+#------------------------------------------------------------------------------
+df_hi_anc4_ses <- df_hi |> filter(group_var == "wealth") 
+
+df_hi_anc4_ses <- df_hi_anc4_ses|>
+  mutate(group = str_split(row.names(df_hi_anc4_ses), "\\.", simplify = TRUE)[,1],
+         country = str_split(row.names(df_hi_anc4_ses), "\\.", simplify = TRUE)[, 2],
+         group = factor(group, levels = c("Poorest", "Poorer", "Middle", "Richer", "Richest"))) |>
+  select(-group_var)
+
+
+f_anc4_ses <- df_hi_anc4_ses |> 
+  mutate(name = fct_reorder(country, anc4)) |>
+  ggplot(aes(x = anc4, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  scale_color_viridis_d() +
+  labs(x = "ANC4 (%)", y = NULL, title = "(A) ANC4") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top")
+
+
+f_skill_ses <- df_hi_anc4_ses |> 
+  mutate(name = fct_reorder(country, inst_skilledYes)) |>
+  ggplot(aes(x = inst_skilledYes, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  scale_color_viridis_d() +
+  labs(x = "Institutional delivery with skilled birth attendant (%)", y = NULL,
+       title = "(B) Institutional delivery with skilled birth attendant") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top")
+
+
+# png("Results/Figure2_ANC4_SES.png", units="in", width = 12, height = 10, res = 300)
+# f_anc4_ses
+# dev.off() 
+# 
+# png("Results/Figure2_Skilled_SES.png", units="in", width = 12, height = 10, res = 300)
+# f_skill_ses
+# dev.off() 
+
+
+png("Results/Figure2_SES.png", units="in", width = 12, height = 12, res = 300)
+gridExtra::grid.arrange(f_anc4_ses, f_skill_ses, ncol = 2)
+dev.off() 
+
+# Place of residence
+#------------------------------------------------------------------------------
+df_hi_anc4_pl <- df_hi |> filter(group_var == "placeofres") 
+
+df_hi_anc4_pl <- df_hi_anc4_pl |>
+  mutate(group = str_split(row.names(df_hi_anc4_pl), "\\.", simplify = TRUE)[,1],
+         country = str_split(row.names(df_hi_anc4_pl), "\\.", simplify = TRUE)[, 2],
+         group = factor(group, levels = c("Rural", "Urban"))) |>
+  select(-group_var)
+
+f_anc4_pl <- df_hi_anc4_pl |> 
+  mutate(name = fct_reorder(country, anc4)) |>
+  ggplot(aes(x = anc4, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  scale_color_brewer(palette = "Set1") +
+  labs(x = "ANC4 (%)", y = NULL, 
+       title = "(A) ANC4") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top")
+
+f_skill_pl <- df_hi_anc4_pl |> 
+  mutate(name = fct_reorder(country, inst_skilledYes)) |>
+  ggplot(aes(x = inst_skilledYes, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  scale_color_brewer(palette = "Set1") +
+  labs(x = "Institutional delivery with skilled birth attendant (%)", y = NULL, 
+       title = "(B) Institutional delivery with skilled birth attendant") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top")
+
+
+
+png("Results/Figure2_placeofres.png", units="in", width = 12, height = 12, res = 300)
+gridExtra::grid.arrange(f_anc4_pl, f_skill_pl, ncol = 2)
+dev.off() 
+
 

@@ -1,0 +1,476 @@
+,group_var,outcome,inst_skilledYes,anc4Yes
+15-19.Angola...1,mom_age_cat,inst_skilled,27.5,57.6
+20-24.Angola...2,mom_age_cat,inst_skilled,26.7,61.2
+25-29.Angola...3,mom_age_cat,inst_skilled,25.8,66.6
+30-34.Angola...4,mom_age_cat,inst_skilled,25.2,64.1
+35-39.Angola...5,mom_age_cat,inst_skilled,23.9,59.7
+40-44.Angola...6,mom_age_cat,inst_skilled,20.3,61.7
+45-49.Angola...7,mom_age_cat,inst_skilled,18.2,48.3
+15-19.Benin...8,mom_age_cat,inst_skilled,12.2,44
+20-24.Benin...9,mom_age_cat,inst_skilled,12.7,53.5
+25-29.Benin...10,mom_age_cat,inst_skilled,12.2,54.9
+30-34.Benin...11,mom_age_cat,inst_skilled,14.1,54.6
+35-39.Benin...12,mom_age_cat,inst_skilled,12.1,54.1
+40-44.Benin...13,mom_age_cat,inst_skilled,11.8,50.8
+45-49.Benin...14,mom_age_cat,inst_skilled,13.3,51.7
+15-19.Burkinafaso...15,mom_age_cat,inst_skilled,2.3,64.6
+20-24.Burkinafaso...16,mom_age_cat,inst_skilled,2.7,70.4
+25-29.Burkinafaso...17,mom_age_cat,inst_skilled,3.4,74.6
+30-34.Burkinafaso...18,mom_age_cat,inst_skilled,3.4,74.7
+35-39.Burkinafaso...19,mom_age_cat,inst_skilled,4.9,74.3
+40-44.Burkinafaso...20,mom_age_cat,inst_skilled,3.7,72.9
+45-49.Burkinafaso...21,mom_age_cat,inst_skilled,2.3,74
+15-19.Burundi...22,mom_age_cat,inst_skilled,12.3,49.8
+20-24.Burundi...23,mom_age_cat,inst_skilled,9.7,52.8
+25-29.Burundi...24,mom_age_cat,inst_skilled,10.7,50.9
+30-34.Burundi...25,mom_age_cat,inst_skilled,10.5,49.1
+35-39.Burundi...26,mom_age_cat,inst_skilled,9.2,47.2
+40-44.Burundi...27,mom_age_cat,inst_skilled,8.7,44.2
+45-49.Burundi...28,mom_age_cat,inst_skilled,10.1,41.3
+15-19.Cameroon...29,mom_age_cat,inst_skilled,58.2,59.3
+20-24.Cameroon...30,mom_age_cat,inst_skilled,64.9,64.3
+25-29.Cameroon...31,mom_age_cat,inst_skilled,62.5,65.3
+30-34.Cameroon...32,mom_age_cat,inst_skilled,65,67.9
+35-39.Cameroon...33,mom_age_cat,inst_skilled,65.3,69.6
+40-44.Cameroon...34,mom_age_cat,inst_skilled,62.6,65.7
+45-49.Cameroon...35,mom_age_cat,inst_skilled,44.3,53.2
+15-19.Cotedivoire...36,mom_age_cat,inst_skilled,69.9,49.5
+20-24.Cotedivoire...37,mom_age_cat,inst_skilled,74.1,56.5
+25-29.Cotedivoire...38,mom_age_cat,inst_skilled,73.2,57.7
+30-34.Cotedivoire...39,mom_age_cat,inst_skilled,75.9,61
+35-39.Cotedivoire...40,mom_age_cat,inst_skilled,68.1,59.3
+40-44.Cotedivoire...41,mom_age_cat,inst_skilled,73,55.6
+45-49.Cotedivoire...42,mom_age_cat,inst_skilled,76.2,48.3
+15-19.Ethiopia...43,mom_age_cat,inst_skilled,23.9,30.2
+20-24.Ethiopia...44,mom_age_cat,inst_skilled,27.4,45.4
+25-29.Ethiopia...45,mom_age_cat,inst_skilled,19.5,46.8
+30-34.Ethiopia...46,mom_age_cat,inst_skilled,16.9,45.7
+35-39.Ethiopia...47,mom_age_cat,inst_skilled,23.3,38.8
+40-44.Ethiopia...48,mom_age_cat,inst_skilled,16.8,35.7
+45-49.Ethiopia...49,mom_age_cat,inst_skilled,16,33.4
+15-19.Gabon...50,mom_age_cat,inst_skilled,7,68.8
+20-24.Gabon...51,mom_age_cat,inst_skilled,12.2,78.9
+25-29.Gabon...52,mom_age_cat,inst_skilled,13.7,84.5
+30-34.Gabon...53,mom_age_cat,inst_skilled,17.3,84.6
+35-39.Gabon...54,mom_age_cat,inst_skilled,20.9,84.8
+40-44.Gabon...55,mom_age_cat,inst_skilled,18.6,80.4
+45-49.Gabon...56,mom_age_cat,inst_skilled,24.2,68.9
+15-19.Gambia...57,mom_age_cat,inst_skilled,89,81.1
+20-24.Gambia...58,mom_age_cat,inst_skilled,86.4,75.1
+25-29.Gambia...59,mom_age_cat,inst_skilled,81.2,77
+30-34.Gambia...60,mom_age_cat,inst_skilled,83.3,81.8
+35-39.Gambia...61,mom_age_cat,inst_skilled,81,82.5
+40-44.Gambia...62,mom_age_cat,inst_skilled,78.9,77.4
+45-49.Gambia...63,mom_age_cat,inst_skilled,82.2,81.1
+15-19.Ghana...64,mom_age_cat,inst_skilled,85.3,79.5
+20-24.Ghana...65,mom_age_cat,inst_skilled,85,85.8
+25-29.Ghana...66,mom_age_cat,inst_skilled,87.1,90.2
+30-34.Ghana...67,mom_age_cat,inst_skilled,85.4,90.7
+35-39.Ghana...68,mom_age_cat,inst_skilled,85.7,90.1
+40-44.Ghana...69,mom_age_cat,inst_skilled,79.5,86.6
+45-49.Ghana...70,mom_age_cat,inst_skilled,81.9,83.7
+15-19.Guinea...71,mom_age_cat,inst_skilled,48.2,35.3
+20-24.Guinea...72,mom_age_cat,inst_skilled,45,40.6
+25-29.Guinea...73,mom_age_cat,inst_skilled,45.6,37.6
+30-34.Guinea...74,mom_age_cat,inst_skilled,43,35
+35-39.Guinea...75,mom_age_cat,inst_skilled,42.9,33.7
+40-44.Guinea...76,mom_age_cat,inst_skilled,35.5,32.6
+45-49.Guinea...77,mom_age_cat,inst_skilled,39.4,31
+15-19.Kenya...78,mom_age_cat,inst_skilled,85.7,55
+20-24.Kenya...79,mom_age_cat,inst_skilled,89.4,68.9
+25-29.Kenya...80,mom_age_cat,inst_skilled,89.8,70.4
+30-34.Kenya...81,mom_age_cat,inst_skilled,86.3,70.9
+35-39.Kenya...82,mom_age_cat,inst_skilled,83.8,62.3
+40-44.Kenya...83,mom_age_cat,inst_skilled,82.1,62.5
+45-49.Kenya...84,mom_age_cat,inst_skilled,66.4,46.6
+15-19.Liberia...85,mom_age_cat,inst_skilled,83.2,87.7
+20-24.Liberia...86,mom_age_cat,inst_skilled,81.1,88.2
+25-29.Liberia...87,mom_age_cat,inst_skilled,79,89.8
+30-34.Liberia...88,mom_age_cat,inst_skilled,72.7,90.4
+35-39.Liberia...89,mom_age_cat,inst_skilled,80.2,89.6
+40-44.Liberia...90,mom_age_cat,inst_skilled,76.6,86.7
+45-49.Liberia...91,mom_age_cat,inst_skilled,76.5,84.7
+15-19.Madagascar...92,mom_age_cat,inst_skilled,9.1,52.9
+20-24.Madagascar...93,mom_age_cat,inst_skilled,9.8,61.4
+25-29.Madagascar...94,mom_age_cat,inst_skilled,9.7,64.9
+30-34.Madagascar...95,mom_age_cat,inst_skilled,11.8,62
+35-39.Madagascar...96,mom_age_cat,inst_skilled,10.1,60.9
+40-44.Madagascar...97,mom_age_cat,inst_skilled,8.3,50.6
+45-49.Madagascar...98,mom_age_cat,inst_skilled,10,45
+15-19.Malawi...99,mom_age_cat,inst_skilled,92,43.3
+20-24.Malawi...100,mom_age_cat,inst_skilled,90.3,48.7
+25-29.Malawi...101,mom_age_cat,inst_skilled,89.8,50.8
+30-34.Malawi...102,mom_age_cat,inst_skilled,89.7,55
+35-39.Malawi...103,mom_age_cat,inst_skilled,86.4,52.4
+40-44.Malawi...104,mom_age_cat,inst_skilled,86.1,54.1
+45-49.Malawi...105,mom_age_cat,inst_skilled,80.8,53.8
+15-19.Mali...106,mom_age_cat,inst_skilled,51,42.4
+20-24.Mali...107,mom_age_cat,inst_skilled,46.4,45.3
+25-29.Mali...108,mom_age_cat,inst_skilled,45.4,42.3
+30-34.Mali...109,mom_age_cat,inst_skilled,42.7,46
+35-39.Mali...110,mom_age_cat,inst_skilled,44,48.7
+40-44.Mali...111,mom_age_cat,inst_skilled,41.2,40.2
+45-49.Mali...112,mom_age_cat,inst_skilled,29.5,33.5
+15-19.Mauritania...113,mom_age_cat,inst_skilled,59.4,36.9
+20-24.Mauritania...114,mom_age_cat,inst_skilled,65.6,41.2
+25-29.Mauritania...115,mom_age_cat,inst_skilled,63.1,42.2
+30-34.Mauritania...116,mom_age_cat,inst_skilled,66.1,45
+35-39.Mauritania...117,mom_age_cat,inst_skilled,66.7,41.6
+40-44.Mauritania...118,mom_age_cat,inst_skilled,61.5,37.9
+45-49.Mauritania...119,mom_age_cat,inst_skilled,51.4,30.3
+15-19.Mozambique...120,mom_age_cat,inst_skilled,35.9,49.2
+20-24.Mozambique...121,mom_age_cat,inst_skilled,34.6,51.7
+25-29.Mozambique...122,mom_age_cat,inst_skilled,37.8,50.5
+30-34.Mozambique...123,mom_age_cat,inst_skilled,37.5,55.4
+35-39.Mozambique...124,mom_age_cat,inst_skilled,36.1,54
+40-44.Mozambique...125,mom_age_cat,inst_skilled,27.6,46.3
+45-49.Mozambique...126,mom_age_cat,inst_skilled,18.9,37.9
+15-19.Nigeria...127,mom_age_cat,inst_skilled,24.3,43.9
+20-24.Nigeria...128,mom_age_cat,inst_skilled,30.1,54.2
+25-29.Nigeria...129,mom_age_cat,inst_skilled,39,58.4
+30-34.Nigeria...130,mom_age_cat,inst_skilled,41.2,63.1
+35-39.Nigeria...131,mom_age_cat,inst_skilled,41.6,60.3
+40-44.Nigeria...132,mom_age_cat,inst_skilled,34.6,56.6
+45-49.Nigeria...133,mom_age_cat,inst_skilled,30.3,53.1
+15-19.Rwanda...134,mom_age_cat,inst_skilled,97.6,41.1
+20-24.Rwanda...135,mom_age_cat,inst_skilled,95.7,44.2
+25-29.Rwanda...136,mom_age_cat,inst_skilled,95.1,49.3
+30-34.Rwanda...137,mom_age_cat,inst_skilled,93.3,48.5
+35-39.Rwanda...138,mom_age_cat,inst_skilled,91.2,49.6
+40-44.Rwanda...139,mom_age_cat,inst_skilled,88.5,43.3
+45-49.Rwanda...140,mom_age_cat,inst_skilled,79.7,35.8
+15-19.Sierraleone...141,mom_age_cat,inst_skilled,85.2,92.2
+20-24.Sierraleone...142,mom_age_cat,inst_skilled,84.1,88.7
+25-29.Sierraleone...143,mom_age_cat,inst_skilled,82.8,90.9
+30-34.Sierraleone...144,mom_age_cat,inst_skilled,79.9,89
+35-39.Sierraleone...145,mom_age_cat,inst_skilled,78.6,87.9
+40-44.Sierraleone...146,mom_age_cat,inst_skilled,79.2,89.7
+45-49.Sierraleone...147,mom_age_cat,inst_skilled,73.2,86.7
+15-19.Southafrica...148,mom_age_cat,inst_skilled,96,76.8
+20-24.Southafrica...149,mom_age_cat,inst_skilled,96,79.2
+25-29.Southafrica...150,mom_age_cat,inst_skilled,97.4,80.2
+30-34.Southafrica...151,mom_age_cat,inst_skilled,95,80.8
+35-39.Southafrica...152,mom_age_cat,inst_skilled,93.9,73
+40-44.Southafrica...153,mom_age_cat,inst_skilled,94.4,74
+45-49.Southafrica...154,mom_age_cat,inst_skilled,84.7,49.7
+15-19.Tajikistan...155,mom_age_cat,inst_skilled,14.1,65
+20-24.Tajikistan...156,mom_age_cat,inst_skilled,14.3,68.1
+25-29.Tajikistan...157,mom_age_cat,inst_skilled,15.4,68.6
+30-34.Tajikistan...158,mom_age_cat,inst_skilled,15.8,63.1
+35-39.Tajikistan...159,mom_age_cat,inst_skilled,15.5,62.2
+40-44.Tajikistan...160,mom_age_cat,inst_skilled,20.4,60.9
+45-49.Tajikistan...161,mom_age_cat,inst_skilled,8.8,45.4
+15-19.Uganda...162,mom_age_cat,inst_skilled,76.7,57.8
+20-24.Uganda...163,mom_age_cat,inst_skilled,76,62.6
+25-29.Uganda...164,mom_age_cat,inst_skilled,72.3,63.1
+30-34.Uganda...165,mom_age_cat,inst_skilled,70.7,61.6
+35-39.Uganda...166,mom_age_cat,inst_skilled,64.6,54.8
+40-44.Uganda...167,mom_age_cat,inst_skilled,63.8,52.2
+45-49.Uganda...168,mom_age_cat,inst_skilled,59.3,51.9
+15-19.Zambia...169,mom_age_cat,inst_skilled,83.2,60.5
+20-24.Zambia...170,mom_age_cat,inst_skilled,81.2,63.6
+25-29.Zambia...171,mom_age_cat,inst_skilled,78.6,62.6
+30-34.Zambia...172,mom_age_cat,inst_skilled,77.1,66.2
+35-39.Zambia...173,mom_age_cat,inst_skilled,77.8,66
+40-44.Zambia...174,mom_age_cat,inst_skilled,73,64
+45-49.Zambia...175,mom_age_cat,inst_skilled,64.7,69.4
+No education.Angola...176,mom_educ,inst_skilled,11.8,38.7
+Primary.Angola...177,mom_educ,inst_skilled,22.2,57.7
+Secondary.Angola...178,mom_educ,inst_skilled,33.9,77.3
+High school.Angola...179,mom_educ,inst_skilled,46.6,90.1
+College.Angola...180,mom_educ,inst_skilled,70.9,92
+No education.Benin...181,mom_educ,inst_skilled,10.4,46.2
+Primary.Benin...182,mom_educ,inst_skilled,15.5,60.9
+Secondary.Benin...183,mom_educ,inst_skilled,16.6,68.3
+High school.Benin...184,mom_educ,inst_skilled,21.3,83.1
+College.Benin...185,mom_educ,inst_skilled,34.4,88
+No education.Burkinafaso...186,mom_educ,inst_skilled,2,71.5
+Primary.Burkinafaso...187,mom_educ,inst_skilled,2.6,73.7
+Secondary.Burkinafaso...188,mom_educ,inst_skilled,5.9,73.3
+High school.Burkinafaso...189,mom_educ,inst_skilled,11.7,76.1
+College.Burkinafaso...190,mom_educ,inst_skilled,15.4,89.1
+No education.Burundi...191,mom_educ,inst_skilled,7.8,46.1
+Primary.Burundi...192,mom_educ,inst_skilled,8.7,51.6
+Secondary.Burundi...193,mom_educ,inst_skilled,11.5,51.1
+High school.Burundi...194,mom_educ,inst_skilled,29,55.6
+College.Burundi...195,mom_educ,inst_skilled,35.1,60.2
+No education.Cameroon...196,mom_educ,inst_skilled,25.4,38.5
+Primary.Cameroon...197,mom_educ,inst_skilled,53,57
+Secondary.Cameroon...198,mom_educ,inst_skilled,81.5,75.4
+High school.Cameroon...199,mom_educ,inst_skilled,94.3,88.2
+College.Cameroon...200,mom_educ,inst_skilled,97.9,93.3
+No education.Cotedivoire...201,mom_educ,inst_skilled,69.1,49.6
+Primary.Cotedivoire...202,mom_educ,inst_skilled,73.6,61.1
+Secondary.Cotedivoire...203,mom_educ,inst_skilled,79.2,67.2
+High school.Cotedivoire...204,mom_educ,inst_skilled,85.5,83.1
+College.Cotedivoire...205,mom_educ,inst_skilled,87.7,86.3
+No education.Ethiopia...206,mom_educ,inst_skilled,12.5,32.7
+Primary.Ethiopia...207,mom_educ,inst_skilled,21.4,43.2
+Secondary.Ethiopia...208,mom_educ,inst_skilled,33.7,59.3
+High school.Ethiopia...209,mom_educ,inst_skilled,49.4,72.1
+College.Ethiopia...210,mom_educ,inst_skilled,61.9,79.1
+No education.Gabon...211,mom_educ,inst_skilled,17.4,76
+Primary.Gabon...212,mom_educ,inst_skilled,7.1,67.6
+Secondary.Gabon...213,mom_educ,inst_skilled,11.4,79.5
+High school.Gabon...214,mom_educ,inst_skilled,15.6,81.7
+College.Gabon...215,mom_educ,inst_skilled,26.9,92.8
+No education.Gambia...216,mom_educ,inst_skilled,77.1,77.4
+Primary.Gambia...217,mom_educ,inst_skilled,80.8,80.9
+Secondary.Gambia...218,mom_educ,inst_skilled,86.7,78.5
+High school.Gambia...219,mom_educ,inst_skilled,95,79.7
+College.Gambia...220,mom_educ,inst_skilled,95.3,91
+No education.Ghana...221,mom_educ,inst_skilled,72.1,81.4
+Primary.Ghana...222,mom_educ,inst_skilled,80.4,83.7
+Secondary.Ghana...223,mom_educ,inst_skilled,83.9,87.1
+High school.Ghana...224,mom_educ,inst_skilled,90.1,90.8
+College.Ghana...225,mom_educ,inst_skilled,98.1,97.4
+No education.Guinea...226,mom_educ,inst_skilled,36.8,31.1
+Primary.Guinea...227,mom_educ,inst_skilled,51.5,43
+Secondary.Guinea...228,mom_educ,inst_skilled,67.3,53.1
+High school.Guinea...229,mom_educ,inst_skilled,90.3,55.5
+College.Guinea...230,mom_educ,inst_skilled,91,70
+No education.Kenya...231,mom_educ,inst_skilled,49.1,49.7
+Primary.Kenya...232,mom_educ,inst_skilled,73,58.6
+Secondary.Kenya...233,mom_educ,inst_skilled,91,65.9
+High school.Kenya...234,mom_educ,inst_skilled,100,78.8
+College.Kenya...235,mom_educ,inst_skilled,98.9,83.7
+No education.Liberia...236,mom_educ,inst_skilled,75.4,87.1
+Primary.Liberia...237,mom_educ,inst_skilled,77.7,86.6
+Secondary.Liberia...238,mom_educ,inst_skilled,80,90.6
+High school.Liberia...239,mom_educ,inst_skilled,84.8,91.3
+College.Liberia...240,mom_educ,inst_skilled,92.8,97.3
+No education.Madagascar...241,mom_educ,inst_skilled,3.1,42.6
+Primary.Madagascar...242,mom_educ,inst_skilled,8.5,55.4
+Secondary.Madagascar...243,mom_educ,inst_skilled,14,72.9
+High school.Madagascar...244,mom_educ,inst_skilled,21.2,84.8
+College.Madagascar...245,mom_educ,inst_skilled,40.8,95.4
+No education.Malawi...246,mom_educ,inst_skilled,84.1,46.9
+Primary.Malawi...247,mom_educ,inst_skilled,87.1,48.4
+Secondary.Malawi...248,mom_educ,inst_skilled,91.4,50.6
+High school.Malawi...249,mom_educ,inst_skilled,96.3,61.5
+College.Malawi...250,mom_educ,inst_skilled,97.9,79.9
+No education.Mali...251,mom_educ,inst_skilled,36.8,37.2
+Primary.Mali...252,mom_educ,inst_skilled,51.5,51.5
+Secondary.Mali...253,mom_educ,inst_skilled,72.4,66
+High school.Mali...254,mom_educ,inst_skilled,100,100
+College.Mali...255,mom_educ,inst_skilled,94.6,85.9
+No education.Mauritania...256,mom_educ,inst_skilled,49.4,34.7
+Primary.Mauritania...257,mom_educ,inst_skilled,62.8,42.7
+Secondary.Mauritania...258,mom_educ,inst_skilled,86.6,46.2
+High school.Mauritania...259,mom_educ,inst_skilled,95.6,54
+College.Mauritania...260,mom_educ,inst_skilled,98.3,56.1
+No education.Mozambique...261,mom_educ,inst_skilled,23.9,35.6
+Primary.Mozambique...262,mom_educ,inst_skilled,30.2,46.1
+Secondary.Mozambique...263,mom_educ,inst_skilled,46.7,64.4
+High school.Mozambique...264,mom_educ,inst_skilled,52.5,76.3
+College.Mozambique...265,mom_educ,inst_skilled,79.5,91
+No education.Nigeria...266,mom_educ,inst_skilled,11.6,34.6
+Primary.Nigeria...267,mom_educ,inst_skilled,28.2,59.1
+Secondary.Nigeria...268,mom_educ,inst_skilled,44.6,67.7
+High school.Nigeria...269,mom_educ,inst_skilled,67.3,82.4
+College.Nigeria...270,mom_educ,inst_skilled,87.4,92.3
+No education.Rwanda...271,mom_educ,inst_skilled,82.9,41.2
+Primary.Rwanda...272,mom_educ,inst_skilled,92.7,44.6
+Secondary.Rwanda...273,mom_educ,inst_skilled,94.6,47.3
+High school.Rwanda...274,mom_educ,inst_skilled,98.3,56.1
+College.Rwanda...275,mom_educ,inst_skilled,99.4,73.3
+No education.Sierraleone...276,mom_educ,inst_skilled,77.6,88.8
+Primary.Sierraleone...277,mom_educ,inst_skilled,82.7,88.4
+Secondary.Sierraleone...278,mom_educ,inst_skilled,85.6,91.1
+High school.Sierraleone...279,mom_educ,inst_skilled,90.6,89.3
+College.Sierraleone...280,mom_educ,inst_skilled,93.9,93.2
+No education.Southafrica...281,mom_educ,inst_skilled,85.8,77.7
+Primary.Southafrica...282,mom_educ,inst_skilled,88,72.3
+Secondary.Southafrica...283,mom_educ,inst_skilled,93.2,78.5
+High school.Southafrica...284,mom_educ,inst_skilled,97.6,76.6
+College.Southafrica...285,mom_educ,inst_skilled,98.4,84.4
+No education.Tajikistan...286,mom_educ,inst_skilled,6.2,54.2
+Primary.Tajikistan...287,mom_educ,inst_skilled,14.1,60.5
+Secondary.Tajikistan...288,mom_educ,inst_skilled,15.6,65.3
+High school.Tajikistan...289,mom_educ,inst_skilled,20.5,78.2
+College.Tajikistan...290,mom_educ,inst_skilled,40.3,87.2
+No education.Uganda...291,mom_educ,inst_skilled,59.8,53.8
+Primary.Uganda...292,mom_educ,inst_skilled,62.4,55.8
+Secondary.Uganda...293,mom_educ,inst_skilled,74.8,61.7
+High school.Uganda...294,mom_educ,inst_skilled,89.1,66.7
+College.Uganda...295,mom_educ,inst_skilled,95.4,72.2
+No education.Zambia...296,mom_educ,inst_skilled,59.7,59.8
+Primary.Zambia...297,mom_educ,inst_skilled,71.3,64.7
+Secondary.Zambia...298,mom_educ,inst_skilled,81.8,63.1
+High school.Zambia...299,mom_educ,inst_skilled,94.5,64.5
+College.Zambia...300,mom_educ,inst_skilled,97.9,81.8
+Poorest.Angola...301,wealth,inst_skilled,10.8,34.3
+Poorer.Angola...302,wealth,inst_skilled,16.7,45.3
+Middle.Angola...303,wealth,inst_skilled,30.6,64.7
+Richer.Angola...304,wealth,inst_skilled,35.7,82.2
+Richest.Angola...305,wealth,inst_skilled,41.2,89.2
+Poorest.Benin...306,wealth,inst_skilled,6.6,31.9
+Poorer.Benin...307,wealth,inst_skilled,10.6,44.9
+Middle.Benin...308,wealth,inst_skilled,10.5,52.2
+Richer.Benin...309,wealth,inst_skilled,14.2,62
+Richest.Benin...310,wealth,inst_skilled,23.4,79.1
+Poorest.Burkinafaso...311,wealth,inst_skilled,1.1,67.3
+Poorer.Burkinafaso...312,wealth,inst_skilled,1.1,72.8
+Middle.Burkinafaso...313,wealth,inst_skilled,2.5,71.4
+Richer.Burkinafaso...314,wealth,inst_skilled,2.9,73.5
+Richest.Burkinafaso...315,wealth,inst_skilled,10.4,79.2
+Poorest.Burundi...316,wealth,inst_skilled,5.7,47.1
+Poorer.Burundi...317,wealth,inst_skilled,7.4,50.2
+Middle.Burundi...318,wealth,inst_skilled,8.5,49.8
+Richer.Burundi...319,wealth,inst_skilled,10.2,47.6
+Richest.Burundi...320,wealth,inst_skilled,21.2,52.3
+Poorest.Cameroon...321,wealth,inst_skilled,23.4,37.1
+Poorer.Cameroon...322,wealth,inst_skilled,53.2,55.4
+Middle.Cameroon...323,wealth,inst_skilled,71.9,66.4
+Richer.Cameroon...324,wealth,inst_skilled,87,82.3
+Richest.Cameroon...325,wealth,inst_skilled,96.3,92.2
+Poorest.Cotedivoire...326,wealth,inst_skilled,54.9,35.9
+Poorer.Cotedivoire...327,wealth,inst_skilled,67.9,47
+Middle.Cotedivoire...328,wealth,inst_skilled,78.7,58
+Richer.Cotedivoire...329,wealth,inst_skilled,85.1,69.4
+Richest.Cotedivoire...330,wealth,inst_skilled,85.6,88
+Poorest.Ethiopia...331,wealth,inst_skilled,7.3,20.1
+Poorer.Ethiopia...332,wealth,inst_skilled,15.2,37.7
+Middle.Ethiopia...333,wealth,inst_skilled,18.4,39
+Richer.Ethiopia...334,wealth,inst_skilled,23.9,48.9
+Richest.Ethiopia...335,wealth,inst_skilled,45.3,70.9
+Poorest.Gabon...336,wealth,inst_skilled,7.5,64.3
+Poorer.Gabon...337,wealth,inst_skilled,8.8,80.9
+Middle.Gabon...338,wealth,inst_skilled,17.1,83.9
+Richer.Gabon...339,wealth,inst_skilled,17.5,88
+Richest.Gabon...340,wealth,inst_skilled,28.8,91.7
+Poorest.Gambia...341,wealth,inst_skilled,70.3,82.8
+Poorer.Gambia...342,wealth,inst_skilled,79,76.1
+Middle.Gambia...343,wealth,inst_skilled,83.8,74.6
+Richer.Gambia...344,wealth,inst_skilled,89.3,76.6
+Richest.Gambia...345,wealth,inst_skilled,95.6,85.7
+Poorest.Ghana...346,wealth,inst_skilled,70.7,78.9
+Poorer.Ghana...347,wealth,inst_skilled,82.8,88.7
+Middle.Ghana...348,wealth,inst_skilled,87.7,86.9
+Richer.Ghana...349,wealth,inst_skilled,93.9,93.2
+Richest.Ghana...350,wealth,inst_skilled,96.8,97.4
+Poorest.Guinea...351,wealth,inst_skilled,16.3,18.9
+Poorer.Guinea...352,wealth,inst_skilled,27.9,27.1
+Middle.Guinea...353,wealth,inst_skilled,38.7,33.2
+Richer.Guinea...354,wealth,inst_skilled,69.3,50.4
+Richest.Guinea...355,wealth,inst_skilled,85.7,61.9
+Poorest.Kenya...356,wealth,inst_skilled,64.7,54.4
+Poorer.Kenya...357,wealth,inst_skilled,86.8,60.6
+Middle.Kenya...358,wealth,inst_skilled,93.2,66.4
+Richer.Kenya...359,wealth,inst_skilled,96.5,70.4
+Richest.Kenya...360,wealth,inst_skilled,98.4,83.8
+Poorest.Liberia...361,wealth,inst_skilled,73.1,83.7
+Poorer.Liberia...362,wealth,inst_skilled,80.7,89.1
+Middle.Liberia...363,wealth,inst_skilled,80.5,88.4
+Richer.Liberia...364,wealth,inst_skilled,77.4,91.1
+Richest.Liberia...365,wealth,inst_skilled,84.5,93.1
+Poorest.Madagascar...366,wealth,inst_skilled,2.2,43.5
+Poorer.Madagascar...367,wealth,inst_skilled,5.8,52.2
+Middle.Madagascar...368,wealth,inst_skilled,9.2,57.5
+Richer.Madagascar...369,wealth,inst_skilled,13.8,70.9
+Richest.Madagascar...370,wealth,inst_skilled,26.1,83.5
+Poorest.Malawi...371,wealth,inst_skilled,86.3,47.9
+Poorer.Malawi...372,wealth,inst_skilled,88.4,48.7
+Middle.Malawi...373,wealth,inst_skilled,87.8,48.8
+Richer.Malawi...374,wealth,inst_skilled,91.4,50.1
+Richest.Malawi...375,wealth,inst_skilled,94.8,60.1
+Poorest.Mali...376,wealth,inst_skilled,21.3,26.1
+Poorer.Mali...377,wealth,inst_skilled,26.7,31.5
+Middle.Mali...378,wealth,inst_skilled,35,37.9
+Richer.Mali...379,wealth,inst_skilled,60.8,52.9
+Richest.Mali...380,wealth,inst_skilled,91.6,76.6
+Poorest.Mauritania...381,wealth,inst_skilled,29.9,28.9
+Poorer.Mauritania...382,wealth,inst_skilled,47.3,35.4
+Middle.Mauritania...383,wealth,inst_skilled,74.5,45.6
+Richer.Mauritania...384,wealth,inst_skilled,92.8,47
+Richest.Mauritania...385,wealth,inst_skilled,95.8,51.9
+Poorest.Mozambique...386,wealth,inst_skilled,20.8,31.8
+Poorer.Mozambique...387,wealth,inst_skilled,27,39.5
+Middle.Mozambique...388,wealth,inst_skilled,34.7,52.2
+Richer.Mozambique...389,wealth,inst_skilled,49.3,68.8
+Richest.Mozambique...390,wealth,inst_skilled,59.9,81.1
+Poorest.Nigeria...391,wealth,inst_skilled,9.2,30.7
+Poorer.Nigeria...392,wealth,inst_skilled,17.9,42.9
+Middle.Nigeria...393,wealth,inst_skilled,37.4,61.3
+Richer.Nigeria...394,wealth,inst_skilled,57.1,75.3
+Richest.Nigeria...395,wealth,inst_skilled,78.9,89.2
+Poorest.Rwanda...396,wealth,inst_skilled,86.8,38.3
+Poorer.Rwanda...397,wealth,inst_skilled,91.1,44
+Middle.Rwanda...398,wealth,inst_skilled,93.4,47.9
+Richer.Rwanda...399,wealth,inst_skilled,96.1,51.4
+Richest.Rwanda...400,wealth,inst_skilled,98.4,56.3
+Poorest.Sierraleone...401,wealth,inst_skilled,76.9,88.1
+Poorer.Sierraleone...402,wealth,inst_skilled,78.6,90.9
+Middle.Sierraleone...403,wealth,inst_skilled,81.2,90.8
+Richer.Sierraleone...404,wealth,inst_skilled,85.3,92
+Richest.Sierraleone...405,wealth,inst_skilled,88.9,84.6
+Poorest.Southafrica...406,wealth,inst_skilled,91.3,72.9
+Poorer.Southafrica...407,wealth,inst_skilled,95,77.7
+Middle.Southafrica...408,wealth,inst_skilled,97.7,80.3
+Richer.Southafrica...409,wealth,inst_skilled,96.9,78.8
+Richest.Southafrica...410,wealth,inst_skilled,98.8,82.4
+Poorest.Tajikistan...411,wealth,inst_skilled,6.9,50.9
+Poorer.Tajikistan...412,wealth,inst_skilled,8.6,58.5
+Middle.Tajikistan...413,wealth,inst_skilled,13.6,63.4
+Richer.Tajikistan...414,wealth,inst_skilled,17.9,73.6
+Richest.Tajikistan...415,wealth,inst_skilled,32.1,82.9
+Poorest.Uganda...416,wealth,inst_skilled,61.7,53.9
+Poorer.Uganda...417,wealth,inst_skilled,61.5,57.4
+Middle.Uganda...418,wealth,inst_skilled,69.2,59.3
+Richer.Uganda...419,wealth,inst_skilled,77.1,63.1
+Richest.Uganda...420,wealth,inst_skilled,91.7,67.5
+Poorest.Zambia...421,wealth,inst_skilled,65.7,65.8
+Poorer.Zambia...422,wealth,inst_skilled,70.7,65.7
+Middle.Zambia...423,wealth,inst_skilled,80.5,64.1
+Richer.Zambia...424,wealth,inst_skilled,90.1,58.9
+Richest.Zambia...425,wealth,inst_skilled,94.9,65.7
+Urban.Angola...426,placeofres,inst_skilled,34.1,74.5
+Rural.Angola...427,placeofres,inst_skilled,12,39.8
+Urban.Benin...428,placeofres,inst_skilled,15.7,60.9
+Rural.Benin...429,placeofres,inst_skilled,10.8,48.7
+Urban.Burkinafaso...430,placeofres,inst_skilled,7.9,75.5
+Rural.Burkinafaso...431,placeofres,inst_skilled,1.8,71.6
+Urban.Burundi...432,placeofres,inst_skilled,26.6,50.9
+Rural.Burundi...433,placeofres,inst_skilled,8.4,49.1
+Urban.Cameroon...434,placeofres,inst_skilled,85.1,80.2
+Rural.Cameroon...435,placeofres,inst_skilled,45.8,52.3
+Urban.Cotedivoire...436,placeofres,inst_skilled,82.1,69
+Rural.Cotedivoire...437,placeofres,inst_skilled,63.6,45.4
+Urban.Ethiopia...438,placeofres,inst_skilled,37.6,59.1
+Rural.Ethiopia...439,placeofres,inst_skilled,15.4,37.5
+Urban.Gabon...440,placeofres,inst_skilled,16.1,83.6
+Rural.Gabon...441,placeofres,inst_skilled,7.2,63.2
+Urban.Gambia...442,placeofres,inst_skilled,87.3,76.5
+Rural.Gambia...443,placeofres,inst_skilled,74.1,84.1
+Urban.Ghana...444,placeofres,inst_skilled,93.8,91.6
+Rural.Ghana...445,placeofres,inst_skilled,77.6,85.4
+Urban.Guinea...446,placeofres,inst_skilled,81.7,54
+Rural.Guinea...447,placeofres,inst_skilled,28.8,28.9
+Urban.Kenya...448,placeofres,inst_skilled,96.5,75.9
+Rural.Kenya...449,placeofres,inst_skilled,82.2,62.4
+Urban.Liberia...450,placeofres,inst_skilled,82.4,91
+Rural.Liberia...451,placeofres,inst_skilled,74.8,86.2
+Urban.Madagascar...452,placeofres,inst_skilled,17.9,74.5
+Rural.Madagascar...453,placeofres,inst_skilled,8.5,57.3
+Urban.Malawi...454,placeofres,inst_skilled,95.1,59.4
+Rural.Malawi...455,placeofres,inst_skilled,88.4,49.3
+Urban.Mali...456,placeofres,inst_skilled,85.1,70.2
+Rural.Mali...457,placeofres,inst_skilled,34.6,37.4
+Urban.Mauritania...458,placeofres,inst_skilled,91.5,47.6
+Rural.Mauritania...459,placeofres,inst_skilled,45.3,36.2
+Urban.Mozambique...460,placeofres,inst_skilled,53.1,71.2
+Rural.Mozambique...461,placeofres,inst_skilled,28.4,43.1
+Urban.Nigeria...462,placeofres,inst_skilled,58.8,76.1
+Rural.Nigeria...463,placeofres,inst_skilled,23.4,46
+Urban.Rwanda...464,placeofres,inst_skilled,97.1,49.2
+Rural.Rwanda...465,placeofres,inst_skilled,91.9,46.8
+Urban.Sierraleone...466,placeofres,inst_skilled,87,89
+Rural.Sierraleone...467,placeofres,inst_skilled,78.6,89.7
+Urban.Southafrica...468,placeofres,inst_skilled,96.8,75.9
+Rural.Southafrica...469,placeofres,inst_skilled,93.5,82
+Urban.Tajikistan...470,placeofres,inst_skilled,27.5,76.7
+Rural.Tajikistan...471,placeofres,inst_skilled,10.7,61
+Urban.Uganda...472,placeofres,inst_skilled,86.7,66.1
+Rural.Uganda...473,placeofres,inst_skilled,67.6,58.5
+Urban.Zambia...474,placeofres,inst_skilled,92.2,60.9
+Rural.Zambia...475,placeofres,inst_skilled,71.3,66
