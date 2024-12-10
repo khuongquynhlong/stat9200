@@ -332,8 +332,21 @@ dev.off()
 
 
 
+x <- myforestPlot(data = coef_neo_all)
+y <- myforestPlot(data = coef_inf_all)
+z <- myforestPlot(data = coef_u5_all)
 
+pdf("Results/Figure3a_neo.pdf", width = 12, height = 6)
+x
+dev.off() 
 
+pdf("Results/Figure3b_inf.pdf", width = 12, height = 6)
+y
+dev.off() 
+
+pdf("Results/Figure3c_u5.pdf", width = 12, height = 6)
+z
+dev.off() 
 
 
 #----- Figure 2: Equity plots
@@ -404,25 +417,31 @@ f_anc4_ses <- df_hi_anc4_ses |>
   mutate(name = fct_reorder(country, anc4)) |>
   ggplot(aes(x = anc4, y = name)) +
   geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
-  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
   scale_color_viridis_d() +
-  labs(x = "ANC4 (%)", y = NULL, title = "(A) ANC4") + 
+  labs(x = "Weighted %", y = NULL, title = "(A) Antenatal care 4+ visits during pregnancy") + 
   scale_x_continuous(limits = c(0, 100)) +
   ggprism::theme_prism(base_size = 10) + 
-  theme(legend.position = "top")
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
 
 
 f_skill_ses <- df_hi_anc4_ses |> 
   mutate(name = fct_reorder(country, inst_skilledYes)) |>
   ggplot(aes(x = inst_skilledYes, y = name)) +
   geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
-  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
   scale_color_viridis_d() +
-  labs(x = "Institutional delivery with skilled birth attendant (%)", y = NULL,
+  labs(x = "Weighted %", y = NULL,
        title = "(B) Institutional delivery with skilled birth attendant") + 
   scale_x_continuous(limits = c(0, 100)) +
   ggprism::theme_prism(base_size = 10) + 
-  theme(legend.position = "top")
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
 
 
 # png("Results/Figure2_ANC4_SES.png", units="in", width = 12, height = 10, res = 300)
@@ -434,7 +453,13 @@ f_skill_ses <- df_hi_anc4_ses |>
 # dev.off() 
 
 
-png("Results/Figure2_SES.png", units="in", width = 12, height = 12, res = 300)
+png("Results/Figure2_SES2.png", units="in", width = 14, height = 9, res = 300)
+gridExtra::grid.arrange(f_anc4_ses, f_skill_ses, ncol = 2)
+dev.off() 
+
+
+
+pdf("Results/Figure2_SES2.pdf", width = 14, height = 9)
 gridExtra::grid.arrange(f_anc4_ses, f_skill_ses, ncol = 2)
 dev.off() 
 
@@ -452,30 +477,38 @@ f_anc4_pl <- df_hi_anc4_pl |>
   mutate(name = fct_reorder(country, anc4)) |>
   ggplot(aes(x = anc4, y = name)) +
   geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
-  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
   scale_color_brewer(palette = "Set1") +
-  labs(x = "ANC4 (%)", y = NULL, 
-       title = "(A) ANC4") + 
+  labs(x = "Weighted %", y = NULL, 
+       title = "(A) Antenatal care 4+ visits during pregnancy") + 
   scale_x_continuous(limits = c(0, 100)) +
   ggprism::theme_prism(base_size = 10) + 
-  theme(legend.position = "top")
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
 
 f_skill_pl <- df_hi_anc4_pl |> 
   mutate(name = fct_reorder(country, inst_skilledYes)) |>
   ggplot(aes(x = inst_skilledYes, y = name)) +
   geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
-  geom_point(aes(color = group), size = 7, alpha = 0.9) +
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
   scale_color_brewer(palette = "Set1") +
-  labs(x = "Institutional delivery with skilled birth attendant (%)", y = NULL, 
+  labs(x = "Weighted %", y = NULL, 
        title = "(B) Institutional delivery with skilled birth attendant") + 
   scale_x_continuous(limits = c(0, 100)) +
   ggprism::theme_prism(base_size = 10) + 
-  theme(legend.position = "top")
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
 
 
 
-png("Results/Figure2_placeofres.png", units="in", width = 12, height = 12, res = 300)
+png("Results/Figure2_placeofres2.png", units="in", width = 14, height = 9, res = 300)
 gridExtra::grid.arrange(f_anc4_pl, f_skill_pl, ncol = 2)
 dev.off() 
 
-
+pdf("Results/Figure2_placeofres2.pdf", width = 14, height = 9)
+gridExtra::grid.arrange(f_anc4_pl, f_skill_pl, ncol = 2)
+dev.off() 
