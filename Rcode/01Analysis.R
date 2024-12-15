@@ -392,15 +392,6 @@ results_df_hi <- results_df_hi |>
 df_hi <- cbind(results_df_hi |> filter(outcome == "inst_skilled") |> select(-c(anc4Yes, outcome)),
                anc4 = results_df_hi |> filter(outcome == "anc4") |> pull(anc4Yes))
 
-# Mother age
-#------------------------------------------------------------------------------
-df_hi_anc4_age <- df_hi |> filter(group_var == "mom_age_cat") 
-
-df_hi_anc4_age <- df_hi_anc4_age|>
-  mutate(country = substring(row.names(df_hi_anc4_age), 7),
-         group = substr(row.names(df_hi_anc4_age), 1, 5)) |>
-  select(-group_var)
-
 
 # Wealth
 #------------------------------------------------------------------------------
@@ -512,3 +503,118 @@ dev.off()
 pdf("Results/Figure2_placeofres2.pdf", width = 14, height = 9)
 gridExtra::grid.arrange(f_anc4_pl, f_skill_pl, ncol = 2)
 dev.off() 
+
+
+# Mother age
+#------------------------------------------------------------------------------
+df_hi_anc4_age <- df_hi |> filter(group_var == "mom_age_cat") 
+
+df_hi_anc4_age <- df_hi_anc4_age|>
+  mutate(country = substring(row.names(df_hi_anc4_age), 7),
+         group = substr(row.names(df_hi_anc4_age), 1, 5),
+         group = factor(group, levels = c("15-19", "20-24", "25-29", "30-34", "35-39", "40-44", "45-49"))) |>
+  select(-group_var)
+
+
+f_anc4_age <- df_hi_anc4_age |> 
+  mutate(name = fct_reorder(country, anc4)) |>
+  ggplot(aes(x = anc4, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
+  scale_color_manual(values = c("#810f7c", "#8c6bb1", "#9ebcda", "#7fcdbb", "#edf8b1", "#fed976", "#fc4e2a")) +
+  guides(colour = guide_legend(nrow = 1)) +
+  labs(x = "Weighted %", y = NULL, title = "(A) Antenatal care 4+ visits during pregnancy") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+
+f_skill_age <- df_hi_anc4_age |> 
+  mutate(name = fct_reorder(country, inst_skilledYes)) |>
+  ggplot(aes(x = inst_skilledYes, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
+  scale_color_manual(values = c("#810f7c", "#8c6bb1", "#9ebcda", "#7fcdbb", "#edf8b1", "#fed976", "#fc4e2a")) +
+  guides(colour = guide_legend(nrow = 1)) +
+  labs(x = "Weighted %", y = NULL,
+       title = "(B) Institutional delivery with skilled birth attendant") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+
+png("Results/SupFigure_age.png", units="in", width = 14, height = 12, res = 300)
+gridExtra::grid.arrange(f_anc4_age, f_skill_age, ncol = 2)
+dev.off() 
+
+
+
+
+# Mother education
+#------------------------------------------------------------------------------
+df_hi_anc4_edu <- df_hi |> filter(group_var == "mom_educ") 
+
+df_hi_anc4_edu <- df_hi_anc4_edu |>
+  mutate(group = str_split(row.names(df_hi_anc4_edu), "\\.", simplify = TRUE)[,1],
+         country = str_split(row.names(df_hi_anc4_edu), "\\.", simplify = TRUE)[, 2],
+         group = factor(group, levels = c("No education", "Primary", "Secondary",
+                                          "High school", "College"))) |>
+  select(-group_var)
+
+
+
+f_anc4_edu <- df_hi_anc4_edu |> 
+  mutate(name = fct_reorder(country, anc4)) |>
+  ggplot(aes(x = anc4, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
+  scale_color_manual(values = c("#8c6bb1", "#3690c0", "#edf8b1", "#fed976", "#fc4e2a")) +
+  guides(colour = guide_legend(nrow = 1)) +
+  labs(x = "Weighted %", y = NULL, title = "(A) Antenatal care 4+ visits during pregnancy") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+
+f_skill_edu <- df_hi_anc4_edu |> 
+  mutate(name = fct_reorder(country, inst_skilledYes)) |>
+  ggplot(aes(x = inst_skilledYes, y = name)) +
+  geom_line(aes(group = country), linewidth = 0.8, alpha = 0.7) + 
+  geom_point(aes(color = group), size = 5, alpha = 0.9) +
+  scale_color_manual(values = c("#8c6bb1", "#3690c0", "#edf8b1", "#fed976", "#fc4e2a")) +
+  guides(colour = guide_legend(nrow = 1)) +
+  labs(x = "Weighted %", y = NULL,
+       title = "(B) Institutional delivery with skilled birth attendant") + 
+  scale_x_continuous(limits = c(0, 100)) +
+  ggprism::theme_prism(base_size = 10) + 
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 12),
+        legend.text = element_text(size = 10))
+
+
+png("Results/SupFigure_edu.png", units="in", width = 14, height = 12, res = 300)
+gridExtra::grid.arrange(f_anc4_edu, f_skill_edu, ncol = 2)
+dev.off() 
+
+
+
+
+
+
+
+
+
+
+
+
+
